@@ -1,0 +1,179 @@
+pwd = see current directory 
+
+
+
+mkdir = make a directory
+if already directory present then it shows error files exits
+
+
+cd = change directory
+
+
+touch = create the empty file
+
+
+cat = read the  content in the file 
+
+to write content in file  1) echo command syntax: echo "data" > filename (when call second time it replace first content on the file)
+2) vi editor syntax = vi filename
+
+ls = list the item in directory 
+
+
+The ls -l command displays directory contents in long format. The long format contains both permissions and ownership
+
+
+df = shows he size ,info of directiory
+
+cp =copy the content from file to file 
+syntax = cp soruce_file destination_file
+
+for directory 
+cp -r  soruce_file destination_file
+
+
+to remove the file 
+command = rm
+syntax = rm file_name
+
+To removr=e the directory 
+
+rmdir file_name (it works only when directory is empty beside they give warning directory is not empty)
+
+
+
+To see the first 10 file or content 
+command =ls |head
+
+to see the process run in cpu 
+command top
+
+to see the working or use of the command 
+for root user use command syntax  command --help
+for user syntax man command
+
+
+
+to see the permission on the file 
+command ls - l head
+
+
+to delete the coomand in command prompt then 
+command = clear
+
+
+
+Root directory is the most important directory in the Linux file system. 
+It is the parent directory to all other directories present in the file system.
+ It is denoted by /. You can navigate to the root directory from any other directory by using the following command.
+
+cd /
+
+/ Root directory(parent)
+~ cd root (root directory in Root )
+
+
+to see the root dirctory 
+command cd /
+then ls -l /
+ 
+to see user in the system 
+command ls -l usr/bin/users
+
+
+Hardlink and softlink 
+
+1. Create hard link to a file
+To create a hard link to a file, you can use the ln command without any options like this:
+
+ ln target_file link_name
+
+2. Create soft link to a file
+To create a symbolic link to a file, use the option -s with the target file name and the link name
+
+syntax =  ln -s target_file link_name
+
+3. Create soft link to a directory
+Creating a soft link to a directory is the same as creating symbolic link to a file. You just need to replace the target file name/path with the directory name/path.
+
+ syntax = ln -s target_directory link_name
+
+
+The ln command has two options for this purpose:
+
+-i: The interactive mode asks you if you want to overwrite the existing link.
+-f: The force mode just updates the existing link without any confirmation.
+
+
+Hard Links
+These links point to the same file
+Have the same inode number.
+They can not span over multiple 
+filesystems.
+Can not be used on directories
+
+softlink 
+
+Also called as a symbolic link.
+Can link files on different file 
+systems.
+Can be used on directories.
+
+hardlink softlink 
+
+to link the file 
+command ln 
+syntax = ln filename type_of_link
+
+
+
+Users and Group
+
+Creating the users
+
+Command: useradd USERS_NAME
+
+each user must have a password. 
+To add passwords we use  passwd command 
+
+syntax : passwd ******
+
+to change the user "su" command is use 
+i.e. su user_name
+
+To find the user the "whoami" command is use
+
+
+ create the groups 
+command : groupadd
+syntax: groupadd groupA
+
+manage ownership and groups:
+
+ To change the user/owner associated with file then use " chown  " command
+syntax :  chown user_name
+ To change the group associated with file then use  " chown :group_name file_name " format
+To change the owner and group at the same time  then use "chown user_name:group_name file_name"
+
+
+manage permissions
+
+The change mode or chmod command sets permissions. The syntax is straight-forward:
+chmod permissions resource-name
+
+Access level	Octal value
+Read	                      4
+Write	                      2
+Execute	                      1
+
+Each identity (user, group, others) has a position:
+Identity	Position
+User	First or left-most
+Group	Middle
+Others	Last or right-most
+ 
+SELinux  
+
+Security-Enhanced Linux (SELinux) is a security architecture for Linux systems that allows administrators to have more control over who can access the system. It was originally developed by the United States National Security Agency (NSA) as a series of patches to the Linux kernel using Linux Security Modules (LSM).  
+
+SELinux was released to the open source community in 2000, and was integrated into the upstream Linux kernel in 2003.
